@@ -1,35 +1,29 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import Fireworks from "react-canvas-confetti/dist/presets/fireworks";
+// import reactLogo from './assets/react.svg'
+// import viteLogo from '/vite.svg'
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [year, setYear] = useState(1994);
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      {year >= 2024 && <Fireworks autorun={{ speed: 3 }} />}
+      <h1>
+        Gratulujeme! Jste zváni.
+      </h1>
+      {year < 2024 ? (
+        <div className="card">
+          <button onClick={() => setYear((count) => count + 1)}>
+            Je rok {year}
+          </button>
+        </div>
+      ) : (
+        <h1>Je rok 2024, Filip oslaví 30. narozeniny!</h1>
+      )}
     </>
-  )
+  );
 }
 
-export default App
+export default App;
