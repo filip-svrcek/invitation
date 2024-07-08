@@ -1,26 +1,28 @@
 import { useState } from "react";
-import Fireworks from "react-canvas-confetti/dist/presets/fireworks";
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
 import "./App.css";
+import { TwentyTwentyFour } from "./components/TwentyTwentyFour";
+import { DEFAULT_YEAR } from "./constants";
+import { YearButton } from "./components/YearButton";
+import { FilipsAge } from "./components/FilipsAge";
 
 function App() {
-  const [year, setYear] = useState(1994);
+  const [year, setYear] = useState(DEFAULT_YEAR);
 
   return (
     <>
-      {year >= 2024 && <Fireworks autorun={{ speed: 3 }} />}
-      <h1>
-        Gratulujeme! Jste zváni.
-      </h1>
+      {
+        <div className="content-box">
+          <FilipsAge year={year} />
+        </div>
+      }
       {year < 2024 ? (
-        <div className="card">
-          <button onClick={() => setYear((count) => count + 1)}>
-            Je rok {year}
-          </button>
+        <div className="content-box">
+          <YearButton year={year} setYear={setYear} />
         </div>
       ) : (
-        <h1>Je rok 2024, Filip oslaví 30. narozeniny!</h1>
+        <div className="content-box">
+          <TwentyTwentyFour />
+        </div>
       )}
     </>
   );
