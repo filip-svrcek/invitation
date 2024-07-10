@@ -1,28 +1,38 @@
 import { useState } from "react";
-import "./App.css";
 import { TwentyTwentyFour } from "./components/TwentyTwentyFour";
 import { DEFAULT_YEAR } from "./constants";
 import { YearButton } from "./components/YearButton";
 import { FilipsAge } from "./components/FilipsAge";
+import { Bubble } from "./components/Bubble";
+import styled from "styled-components";
+
+const ContentBox = styled.div`
+  height: 4em;
+  width: 400px;
+`;
 
 function App() {
   const [year, setYear] = useState(DEFAULT_YEAR);
+  const age = year - DEFAULT_YEAR;
 
   return (
     <>
+      <ContentBox>
+        <Bubble age={age} />
+      </ContentBox>
       {
-        <div className="content-box">
-          <FilipsAge year={year} />
-        </div>
+        <ContentBox>
+          <FilipsAge age={age} />
+        </ContentBox>
       }
-      {year < 2024 ? (
-        <div className="content-box">
+      {year < 2025 ? (
+        <ContentBox>
           <YearButton year={year} setYear={setYear} />
-        </div>
+        </ContentBox>
       ) : (
-        <div className="content-box">
+        <ContentBox>
           <TwentyTwentyFour />
-        </div>
+        </ContentBox>
       )}
     </>
   );

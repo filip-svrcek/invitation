@@ -1,27 +1,31 @@
 import PropTypes from "prop-types";
-import { DEFAULT_YEAR } from "../constants";
-import { useEffect, useState } from "react";
 
-export const FilipsAge = ({ year }) => {
-  const [age, setAge] = useState(year - DEFAULT_YEAR);
-
-  useEffect(() => {
-    setAge(year - DEFAULT_YEAR);
-  }, [year]);
-
-  if (age >= 30) {
-    return <h1>Filip: 👴</h1>;
+const getFilipEmoji = (age) => {
+  if (age === 30) {
+    return "👴";
   } else if (age > 20) {
-    return <h1>Filip: 👨</h1>;
+    return "👨";
   } else if (age > 10) {
-    return <h1>Filip: 👦</h1>;
-  } else if (age > 2) {
-    return <h1>Filip: 👶</h1>;
+    return "👦";
   } else {
-    return <h1></h1>;
+    return "👶";
   }
 };
 
+export const FilipsAge = ({ age }) => {
+  const emoji = getFilipEmoji(age);
+  const yearString = age === 1 ? "rok" : age < 5 && age > 1 ? "roky" : "let";
+
+  if (age > 30) {
+    return null;
+  }
+  return emoji ? (
+    <h1>
+      Filip: {emoji} | {age} {yearString}
+    </h1>
+  ) : null;
+};
+
 FilipsAge.propTypes = {
-  year: PropTypes.number.isRequired,
+  age: PropTypes.number.isRequired,
 };
