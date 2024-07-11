@@ -4,9 +4,11 @@ import styled from "styled-components";
 const getFilipEmoji = (age) => {
   if (age === 30) {
     return "👴";
-  } else if (age > 20) {
+  } else if (age > 19) {
     return "👨";
-  } else if (age > 10) {
+  } else if (age > 12) {
+    return "🧑";
+  } else if (age > 6) {
     return "👦";
   } else {
     return "👶";

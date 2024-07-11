@@ -41,16 +41,19 @@ const getBubbleText = (age) => {
   if (age > 6 && age < 10) {
     return "Škola? Bylo mi líp než jsem se naučil číst a psát!";
   }
-  if (age > 12 && age < 17) {
+  if (age > 12 && age < 16) {
     return "Proč je celý svět proti mně?!";
   }
-  if (age > 19 && age < 23) {
+  if (age > 18 && age < 22) {
     return `Dneska mi někdo poprvé řekl "dobrý den"!`;
   }
-  if (age > 23 && age < 26) {
+  if (age > 22 && age < 24) {
     return "Nelíbí se mi, kam to spěje...";
   }
-  if (age > 26 && age < 29) {
+  if (age > 24 && age < 27) {
+    return "To by stačilo!";
+  }
+  if (age > 27 && age < 29) {
     return "Přestaň klikat!!";
   }
   if (age === 30) {
