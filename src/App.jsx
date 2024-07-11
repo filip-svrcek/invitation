@@ -7,8 +7,14 @@ import { Bubble } from "./components/Bubble";
 import styled from "styled-components";
 
 const ContentBox = styled.div`
-  height: 4em;
-  width: 400px;
+  width: 360px;
+  height: 80px;
+`;
+
+const MainContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 function App() {
@@ -16,7 +22,7 @@ function App() {
   const age = year - DEFAULT_YEAR;
 
   return (
-    <>
+    <MainContainer>
       <ContentBox>
         <Bubble age={age} />
       </ContentBox>
@@ -34,7 +40,7 @@ function App() {
           <TwentyTwentyFour />
         </ContentBox>
       )}
-    </>
+    </MainContainer>
   );
 }
 
