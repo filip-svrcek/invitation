@@ -9,15 +9,15 @@ const BubbleDiv = styled.div`
   border-radius: 20px;
   position: relative;
   font-family: Arial, sans-serif;
-  font-size: 1em;
+  font-size: 1.5em;
   &::after {
     content: "";
     position: absolute;
     bottom: 1px;
-    right: 90px;
+    left: 30px;
     width: 0;
     height: 0;
-    border: 10px solid transparent;
+    border: 20px solid transparent;
     border-top-color: #703f3f;
     border-bottom: 0;
     margin-left: -10px;
@@ -25,14 +25,20 @@ const BubbleDiv = styled.div`
   }
 `;
 
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
 const getBubbleText = (age) => {
   if (age > 0 && age < 3) {
     return "Tlačítkem zvyšuješ můj věk.";
   }
-  if (age > 3 && age < 6) {
+  if (age > 3 && age < 5) {
     return "Doufám, že víš, co děláš...";
   }
-  if (age > 7 && age < 11) {
+  if (age > 6 && age < 10) {
     return "Škola? Bylo mi líp než jsem se naučil číst a psát!";
   }
   if (age > 12 && age < 17) {
@@ -60,9 +66,9 @@ export const Bubble = ({ age }) => {
     return null;
   }
   return (
-    <div>
+    <Container>
       <BubbleDiv>{bubbleText}</BubbleDiv>
-    </div>
+    </Container>
   );
 };
 

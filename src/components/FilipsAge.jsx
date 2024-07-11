@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import styled from "styled-components";
 
 const getFilipEmoji = (age) => {
   if (age === 30) {
@@ -12,6 +13,24 @@ const getFilipEmoji = (age) => {
   }
 };
 
+const EmojiYearContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2em;
+`;
+const EmojiElement = styled.div`
+  font-size: 1.5em;
+`;
+const YearTextElement = styled.div`
+  font-size: 1.5em;
+  width: 130px;
+`;
+const Divider = styled.div`
+  font-size: 1.5em;
+  margin: 0px 10px;
+`;
+
 export const FilipsAge = ({ age }) => {
   const emoji = getFilipEmoji(age);
   const yearString = age === 1 ? "rok" : age < 5 && age > 1 ? "roky" : "let";
@@ -20,9 +39,15 @@ export const FilipsAge = ({ age }) => {
     return null;
   }
   return emoji ? (
-    <h1>
-      Filip: {emoji} | {age} {yearString}
-    </h1>
+    <>
+      <EmojiYearContainer>
+        <EmojiElement>{emoji}</EmojiElement>
+        <Divider>|</Divider>
+        <YearTextElement>
+          {age} {yearString}
+        </YearTextElement>
+      </EmojiYearContainer>
+    </>
   ) : null;
 };
 

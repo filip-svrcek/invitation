@@ -8,7 +8,7 @@ import styled from "styled-components";
 
 const ContentBox = styled.div`
   width: 360px;
-  height: 80px;
+  height: 100px;
 `;
 
 const MainContainer = styled.div`
@@ -26,15 +26,19 @@ function App() {
       <ContentBox>
         <Bubble age={age} />
       </ContentBox>
-      {
-        <ContentBox>
-          <FilipsAge age={age} />
-        </ContentBox>
-      }
+      {<></>}
       {year < 2025 ? (
-        <ContentBox>
-          <YearButton year={year} setYear={setYear} />
-        </ContentBox>
+        <>
+          <div style={{ fontSize: "1.5em", width: "200px", textAlign: "left" }}>
+            Filip
+          </div>
+          <ContentBox>
+            <FilipsAge age={age} />
+          </ContentBox>
+          <ContentBox>
+            <YearButton year={year} setYear={setYear} />
+          </ContentBox>
+        </>
       ) : (
         <ContentBox>
           <TwentyTwentyFour />
