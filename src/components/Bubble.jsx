@@ -32,7 +32,7 @@ const Container = styled.div`
 `;
 
 const getBubbleText = (age) => {
-  if (age > 0 && age < 3) {
+  if (age >= 0 && age < 2) {
     return "Tlačítkem zvyšuješ můj věk.";
   }
   if (age > 3 && age < 5) {
