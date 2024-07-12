@@ -44,7 +44,7 @@ const getBubbleText = (age) => {
   if (age > 12 && age < 16) {
     return "Proč je celý svět proti mně?!";
   }
-  if (age > 18 && age < 22) {
+  if (age > 19 && age < 22) {
     return `Dneska mi někdo poprvé řekl "dobrý den"!`;
   }
   if (age > 22 && age < 24) {

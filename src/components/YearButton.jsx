@@ -4,6 +4,7 @@ import { CelebrateButton } from "./CelebrateButton";
 
 const Button = styled.button`
   font-size: 2em;
+  width: 230px;
 `;
 
 export const YearButton = ({ year, setYear }) => {
