@@ -26,7 +26,7 @@ const EmojiElement = styled.div`
 `;
 const YearTextElement = styled.div`
   font-size: 1.5em;
-  width: 130px;
+  width: 140px;
 `;
 const Divider = styled.div`
   font-size: 1.5em;
